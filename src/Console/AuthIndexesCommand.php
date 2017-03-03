@@ -34,7 +34,7 @@ class AuthIndexesCommand extends Command
                'key',
                null,
                InputOption::VALUE_REQUIRED,
-               'The subscription\'s Acquia Network key'
+               'The subscription\'s Acquia Network key, e.g. ABCD-12345'
             )
         ;
     }
@@ -48,10 +48,10 @@ class AuthIndexesCommand extends Command
 
         $dialog = $this->getHelperSet()->get('dialog');
         if (!$identifier = $input->getOption('identifier')) {
-            $identifier = $dialog->ask($output, 'Acquia Network Identifier: ');
+            $identifier = $dialog->ask($output, 'Acquia Network Identifier (e.g. ABCD-12345):');
         }
         if (!$key = $input->getOption('key')) {
-            $key = $dialog->ask($output, 'Acquia Network Key: ');
+            $key = $dialog->ask($output, 'Acquia Network Key (32 character hexadecimal): ');
         }
 
         $network = AcquiaNetworkClient::factory(array(

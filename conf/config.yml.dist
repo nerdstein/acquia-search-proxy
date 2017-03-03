@@ -1,5 +1,9 @@
 
+# Key of the 'service' in indexes.json file.
 acquia.search.proxy.identifier: XXXX-XXXXX
+
+# Alter the path only if you are changing from the default conf directory.
 acquia.search.proxy.auth_file:  %root_dir%/conf/indexes.json
 
+# Alter the path only if you are changing from the default log directory.
 monolog.logfile: %root_dir%/log/acquia-search-proxy.log
